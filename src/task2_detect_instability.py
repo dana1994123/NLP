@@ -1,6 +1,6 @@
 import re
 import pandas as pd
-from src.config import get_basic_model, get_reasoning_model
+from langchain_groq import ChatGroq
 from src.data_utils import (
     load_matching_csv,
     prepare_instance,
@@ -9,7 +9,6 @@ from src.data_utils import (
 )
 
 from src.data_utils import normalize_matching_dict
-from langchain_groq import ChatGroq
 
 
 

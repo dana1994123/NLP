@@ -1,5 +1,6 @@
 import re
 import pandas as pd
+from langchain_groq import ChatGroq
 
 from src.config import get_basic_model, get_reasoning_model
 from src.data_utils import (
