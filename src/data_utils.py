@@ -5,7 +5,17 @@ import os
 
 from src.config import DATA_DIR
 
+# =========================
+# COMMON SETUP AND HELPERS
+# =========================
+# Goal: Define shared functions and utilities used across all tasks.
 
+# Includes:
+# - dataset loading
+# - preference parsing
+# - instance preparation
+# - answer template generation
+# - shared utility functions
 
 
 # =========================================
