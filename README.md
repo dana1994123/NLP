@@ -1,5 +1,10 @@
 # Stable Matching Experiments with LLMs
 
+## Authors
+Dana Aljamal  
+Shahida Batool  
+Nimrah Adam  
+
 ## Overview
 
 This project evaluates how large language models (LLMs) perform on structured reasoning tasks based on the Stable Matching Problem.
@@ -110,8 +115,5 @@ project/
 │
 └── README.md
 
-## Authors
 
-Dana Aljamal  
-Shahida Batool  
-Nimrah Adam  
+
