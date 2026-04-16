@@ -13,6 +13,8 @@ across four tasks involving matching, detection, correction, and preference reas
 
 An extended evaluation is also performed using an advanced model (Gemini) to analyze how performance scales with increasing problem size.
 
+The experiments use synthetic datasets generated under the Impartial Culture (IC) setting.
+
 The goal is to assess:
 
 - correctness and validity  
@@ -68,14 +70,25 @@ The model answers preference-based reasoning questions.
 
 ---
 
+## Key Results and Insights
+
+- Models achieve high validity but struggle with stability, indicating difficulty in enforcing global constraints  
+- Stable matching generation performance is low (~30%), showing challenges in multi-step reasoning  
+- Preference reasoning tasks perform better (up to ~70% accuracy), highlighting strength in local reasoning  
+- The reasoning model does not consistently outperform the basic model, indicating reliability limitations  
+- Gemini performs well on smaller datasets but degrades significantly on larger instances, highlighting scalability challenges  
+
+---
+
 ## Project Structure
 
 ```text
 project/
 ├── data/
-│   └── 5_ic_processed.csv
-|   └── 20_ic_processed.csv
+│   ├── 5_ic_processed.csv
+│   ├── 20_ic_processed.csv
 │   └── 50_ic_processed.csv
+│
 ├── src/
 │   ├── config.py
 │   ├── data_utils.py
@@ -96,3 +109,9 @@ project/
 │   └── figures/
 │
 └── README.md
+
+## Authors
+
+Dana Aljamal  
+Shahida Batool  
+Nimrah Adam  
