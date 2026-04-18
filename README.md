@@ -39,10 +39,11 @@ All primary experiments use synthetically generated instances from the **Imparti
 
 | File | Description | Used In |
 | :--- | :--- | :--- |
-| `5_ic_processed.csv` | 5 Proposers × 5 Acceptors market (compact, primary dataset) | `llm_stable_matching_evaluation.ipynb` (Tasks 1–4) |
-| `20_ic_processed.csv` | 20 Proposers × 20 Acceptors market (medium-scale) | Available for extended runs |
+| `5_ic_processed.csv` | 5 Proposers × 5 Acceptors (10 agents total) | All Tasks 1–4 in the main notebook (`llm_stable_matching_evaluation.ipynb`). Evaluated on 10 and 20 sampled instances. |
+| `20_ic_processed.csv` | 10 Proposers × 10 Acceptors (20 agents total) | Gemini scaling evaluation only (`gemini_stable_matching_evaluation.ipynb`). Not included in this repository. |
+| `50_ic_processed.csv` | 25 Proposers × 25 Acceptors (50 agents total) | Gemini scaling evaluation only (`gemini_stable_matching_evaluation.ipynb`). Not included in this repository. |
 
-> **Note:** Larger 50-agent datasets were used externally for the Gemini scaling evaluation referenced in the Discussion section, but are not included in this repository due to file size.
+> **Note:** The `20_ic_processed.csv` and `50_ic_processed.csv` files were used externally to test how Gemini performance degrades as market size increases. They are not included in this repository due to file size.
 
 ---
 
@@ -157,8 +158,7 @@ A **Groq API key** is required. When you run the notebook, you will be prompted 
 ```text
 NLP/
 ├── data/
-│   ├── 5_ic_processed.csv          # Primary dataset (5×5 market)
-│   └── 10_ic_processed.csv         # Medium-scale dataset (10×10 market)
+│   └── 5_ic_processed.csv          # Primary dataset used in all Tasks 1–4
 │
 ├── src/
 │   ├── __init__.py
