@@ -1,3 +1,4 @@
+import time
 import pandas as pd
 from langchain_groq import ChatGroq
 from src.task1_stable_matching import process_model_response
@@ -103,7 +104,8 @@ Make sure each man is matched with exactly one woman and each woman is matched w
 def task3_basic_model(csv_file, num_instances=10, start_index=0, temperature=0, num_examples_to_show=2):
     llm = ChatGroq(
         model="llama-3.1-8b-instant",
-        temperature=temperature
+        temperature=temperature,
+        max_retries=30
     )
 
     df = load_matching_csv(csv_file)
@@ -134,6 +136,7 @@ def task3_basic_model(csv_file, num_instances=10, start_index=0, temperature=0, 
         )
 
         response = llm.invoke(prompt)
+        time.sleep(9.0)
         raw_output = response.content
 
         result = process_model_response(
@@ -197,7 +200,8 @@ def task3_basic_model(csv_file, num_instances=10, start_index=0, temperature=0, 
 def task3_reasoning_model(csv_file, num_instances=10, start_index=0, temperature=0, num_examples_to_show=2):
     llm_reasoning = ChatGroq(
         model="llama-3.3-70b-versatile",
-        temperature=temperature
+        temperature=temperature,
+        max_retries=30
     )
 
     df = load_matching_csv(csv_file)
@@ -228,6 +232,7 @@ def task3_reasoning_model(csv_file, num_instances=10, start_index=0, temperature
         )
 
         response = llm_reasoning.invoke(prompt)
+        time.sleep(9.0)
         raw_output = response.content
 
         result = process_model_response(

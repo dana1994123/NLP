@@ -1,3 +1,4 @@
+import time
 import re
 import pandas as pd
 from langchain_groq import ChatGroq
@@ -231,7 +232,8 @@ def process_task2_model_response(raw_output, true_label, show_output=True):
 def task2_basic_model(csv_file, num_instances=10, start_index=0, temperature=0, num_examples_to_show=2):
     llm = ChatGroq(
         model="llama-3.1-8b-instant",
-        temperature=temperature
+        temperature=temperature,
+        max_retries=30
     )
 
     df = load_matching_csv(csv_file)
@@ -267,6 +269,7 @@ def task2_basic_model(csv_file, num_instances=10, start_index=0, temperature=0, 
         )
 
         response = llm.invoke(prompt)
+        time.sleep(9.0)
         raw_output = response.content
 
         result = process_task2_model_response(
@@ -312,7 +315,8 @@ def task2_basic_model(csv_file, num_instances=10, start_index=0, temperature=0, 
 def task2_reasoning_model(csv_file, num_instances=10, start_index=0, temperature=0, num_examples_to_show=2):
     llm_reasoning = ChatGroq(
         model="llama-3.3-70b-versatile",
-        temperature=temperature
+        temperature=temperature,
+        max_retries=30
     )
 
     df = load_matching_csv(csv_file)
@@ -348,6 +352,7 @@ def task2_reasoning_model(csv_file, num_instances=10, start_index=0, temperature
         )
 
         response = llm_reasoning.invoke(prompt)
+        time.sleep(9.0)
         raw_output = response.content
 
         result = process_task2_model_response(

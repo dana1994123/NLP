@@ -1,3 +1,4 @@
+import time
 from langchain_groq import ChatGroq
 
 from src.data_utils import (
@@ -227,7 +228,8 @@ def run_model_on_instances(model, csv_file, num_instances=5, start_index=0, num_
 def basic_model(csv_file, num_instances=5, start_index=0, temperature=0, num_examples_to_show=2):
     llm = ChatGroq(
         model="llama-3.1-8b-instant",
-        temperature=temperature
+        temperature=temperature,
+        max_retries=30
     )
 
     return run_model_on_instances(
@@ -246,7 +248,8 @@ def basic_model(csv_file, num_instances=5, start_index=0, temperature=0, num_exa
 def reasoning_model(csv_file, num_instances=5, start_index=0, temperature=0, num_examples_to_show=2):
     llm_reasoning = ChatGroq(
         model="llama-3.3-70b-versatile",
-        temperature=temperature
+        temperature=temperature,
+        max_retries=30
     )
 
     return run_model_on_instances(
