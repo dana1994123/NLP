@@ -40,7 +40,7 @@ All primary experiments use synthetically generated instances from the **Imparti
 | File | Description | Used In |
 | :--- | :--- | :--- |
 | `5_ic_processed.csv` | 5 Proposers × 5 Acceptors market (compact, primary dataset) | `llm_stable_matching_evaluation.ipynb` (Tasks 1–4) |
-| `10_ic_processed.csv` | 10 Proposers × 10 Acceptors market (medium-scale) | Available for extended runs |
+| `20_ic_processed.csv` | 20 Proposers × 20 Acceptors market (medium-scale) | Available for extended runs |
 
 > **Note:** Larger 50-agent datasets were used externally for the Gemini scaling evaluation referenced in the Discussion section, but are not included in this repository due to file size.
 
