@@ -173,7 +173,7 @@ NLP/
 │   └── task4_preference_reasoning.py# Task 4 inference pipeline
 │
 ├── notebooks/
-│   ├── llm_stable_matching_evaluation.ipynb      # Main evaluation notebook (Tasks 1–4)
+│   ├── llm_matching_markets_evaluation.ipynb      # Main evaluation notebook (Tasks 1–4)
 │   ├── gemini_stable_matching_evaluation.ipynb   # Gemini scaling evaluation
 │   └── architecture.png                          # Architecture diagram (used in notebook)
 │
