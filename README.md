@@ -1,4 +1,4 @@
-# Stable Matching Experiments with LLMs
+# Evaluating LLMs on Stable Matching and Preference Reasoning Tasks
 
 ## Authors
 Dana Aljamal  
