@@ -43,7 +43,7 @@ All primary experiments use synthetically generated instances from the **Imparti
 | `20_ic_processed.csv` | 10 Proposers × 10 Acceptors (20 agents total) | Gemini scaling evaluation only (`gemini_stable_matching_evaluation.ipynb`). Not included in this repository. |
 | `50_ic_processed.csv` | 25 Proposers × 25 Acceptors (50 agents total) | Gemini scaling evaluation only (`gemini_stable_matching_evaluation.ipynb`). Not included in this repository. |
 
-> **Note:** The `20_ic_processed.csv` and `50_ic_processed.csv` files were used externally to test how Gemini performance degrades as market size increases. They are not included in this repository due to file size.
+> **Note:** The `50_ic_processed.csv` files were used externally to test how Gemini performance degrades as market size increases. They are not included in this repository due to file size.
 
 ---
 
@@ -159,6 +159,7 @@ A **Groq API key** is required. When you run the notebook, you will be prompted 
 NLP/
 ├── data/
 │   └── 5_ic_processed.csv          # Primary dataset used in all Tasks 1–4
+│   └── 20_ic_processed.csv
 │
 ├── src/
 │   ├── __init__.py
